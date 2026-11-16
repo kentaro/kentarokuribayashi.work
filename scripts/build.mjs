@@ -36,8 +36,12 @@ function subgroups(md, depth = 3) {
   }).join('\n');
 }
 const bio = intro.split(/\n\s*\n/).map(s=>s.trim()).filter(s=>s && !s.startsWith('----'));
-bio.shift(); // Roles are represented by the hero, affiliations and qualifications.
+const credentials = bio.shift().split(' / ').slice(3,5).join(' / ');
 const interests = bio.pop();
+const affiliationItems = marked.lexer(sections.get('所属')).find(t=>t.type==='list').items;
+const affiliationRoles = ['取締役CTO・ペパボ研究所長','理事','理事'];
+const affiliationLabels = ['WORK','TECHNOLOGY','HUMAN-CENTERED AI'];
+const affiliations = affiliationItems.map((item,index)=>`<li><p class="eyebrow">${affiliationLabels[index]}</p><div>${html(item.text)}<p class="affiliation-role">${affiliationRoles[index]}</p></div></li>`).join('');
 const career = marked.lexer(sections.get('学歴・経歴')).find(t=>t.type==='list');
 const timeline = `<ol class="timeline">${career.items.map(item=> {
   const match = item.text.match(/^(\d{4})年(\d+)月:\s*([\s\S]*)$/);
@@ -59,23 +63,21 @@ const body = `<a class="skip dads-link" href="#main">本文へ移動</a>
 <header class="site-header wrap"><a class="wordmark" href="#top">Kentaro Kuribayashi<span>PROFILE & WORK</span></a><a class="journal-link dads-link" href="https://kentarokuribayashi.com/">日記と制作物 <span aria-hidden="true">↗</span></a></header>
 <main id="main">
   <section class="hero wrap" id="top" aria-labelledby="name">
-    <div class="hero-copy"><p class="eyebrow">ENGINEERING / MANAGEMENT / RESEARCH</p>
-      <h1 id="name" class="dads-heading" data-size="64"><span>Kentaro</span><span>Kuribayashi</span></h1>
-      <p class="name-ja">栗林健太郎 <span>あんちぽ / antipop</span></p>
-      <p class="hero-intro">エンジニア、経営者、研究者。<br><span>技術と組織をつくり、</span><span>人の可能性を広げる。</span></p>
-      <p class="hero-role">GMOペパボ株式会社 取締役CTO<br>博士（情報科学）</p>
-      <a class="dads-link hero-contact" href="mailto:${config.email}">お問い合わせ <span aria-hidden="true">↗</span></a>
+    <div class="hero-identity">
+      <h1 id="name" class="dads-heading" data-size="45">栗林健太郎</h1>
+      <p class="name-en">Kentaro Kuribayashi</p>
+      <p class="alias">あんちぽ / antipop</p>
     </div>
     <figure class="hero-portrait"><img src="./assets/portrait.jpg" width="832" height="833" alt="栗林健太郎のポートレート" fetchpriority="high"></figure>
+    <div class="hero-summary">
+      <p class="hero-intro">エンジニア、経営者、研究者。<br><span>技術と組織をつくり、</span><span>人の可能性を広げる。</span></p>
+      <div class="hero-meta"><div class="hero-role">${html(credentials)}</div><a class="dads-link hero-contact" href="mailto:${config.email}">お問い合わせ <span aria-hidden="true">↗</span></a></div>
+    </div>
   </section>
-  <div class="focus-strip wrap" aria-label="現在の活動">
-    <div><p class="eyebrow">WORK</p><p>GMOペパボ株式会社<br><strong>取締役CTO・ペパボ研究所長</strong></p></div>
-    <div><p class="eyebrow">TECHNOLOGY</p><p>一般社団法人日本CTO協会<br><strong>理事</strong></p></div>
-    <div><p class="eyebrow">HUMAN-CENTERED AI</p><p>一般社団法人人間中心のAIコンソーシアム<br><strong>理事</strong></p></div>
-  </div>
+  <ul class="focus-strip wrap" aria-label="現在の活動・所属">${affiliations}</ul>
   <nav class="page-nav" aria-label="ページ内の目次"><div class="wrap">${nav.map(([id,label])=>`<a class="dads-link" href="#${id}">${label}</a>`).join('')}</div></nav>
   <div class="wrap main-sections">
-    ${group('about','ABOUT','栗林健太郎について',`<div class="prose">${html(bio.join('\n\n'))}</div><div class="affiliations"><p class="eyebrow">AFFILIATIONS</p>${html(sections.get('所属'))}</div>`)}
+    ${group('about','ABOUT','プロフィール',`<div class="prose">${html(bio.join('\n\n'))}</div>`)}
     ${group('career','EXPERIENCE & EDUCATION','学歴・経歴',timeline)}
     ${group('research','RESEARCH & PATENTS','研究・特許',`<p class="section-lead">IoTシステムの複雑さを減らすための基盤技術を研究。<br>Elixir、Erlang/OTP、WebAssemblyを中心に。</p>${subgroups(sections.get('研究開発実績'))}`)}
     ${group('writing','BOOKS & WRITING','書籍・執筆',subgroups(sections.get('執筆物')))}
