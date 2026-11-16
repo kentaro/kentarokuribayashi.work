@@ -42,7 +42,7 @@ const career = marked.lexer(sections.get('学歴・経歴')).find(t=>t.type==='l
 const timeline = `<ol class="timeline">${career.items.map(item=> {
   const match = item.text.match(/^(\d{4})年(\d+)月:\s*([\s\S]*)$/);
   if (!match) throw new Error(`Career date not understood: ${item.text}`);
-  return `<li><time datetime="${match[1]}-${match[2].padStart(2,'0')}">${match[1]}<span>${match[2].padStart(2,'0')}</span></time><div>${html(match[3])}</div></li>`;
+  return `<li><time datetime="${match[1]}-${match[2].padStart(2,'0')}">${match[1]}年${Number(match[2])}月</time><div>${html(match[3])}</div></li>`;
 }).join('')}</ol>`;
 const talkSource = sections.get('口頭発表・登壇等');
 const [international, domestic] = talkSource.split('### 国内');
@@ -51,7 +51,7 @@ const talks = `<div class="record-group"><h3 class="dads-heading" data-size="24"
 ${domestic.split(/(?=^#### )/m).filter(s=>s.trim()).map(block=>{
   const match = block.match(/^#### (\d{4})年\s*\n/);
   if (!match) throw new Error('Speaking year not understood');
-  return `<div id="talks-${match[1]}" class="year-group"><h4>${match[1]}</h4><div class="records">${html(block.slice(match[0].length))}</div></div>`;
+  return `<div id="talks-${match[1]}" class="year-group"><h4>${match[1]}年</h4><div class="records">${html(block.slice(match[0].length))}</div></div>`;
 }).join('')}`;
 const nav = [['about','紹介'],['career','経歴'],['research','研究'],['writing','執筆'],['talks','登壇'],['press','取材'],['contact','連絡先']];
 const description = '栗林健太郎（あんちぽ）のプロフィール。GMOペパボ取締役CTO、博士（情報科学）。経歴、研究論文、特許、著書、登壇、取材、公共活動をまとめています。';
