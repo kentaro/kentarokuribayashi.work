@@ -26,7 +26,7 @@ npm run dev
 | `scripts/build.mjs` | 章・年代別に構造化し、静的HTMLを生成 |
 | `src/template.html` | DADSを基にしたHTMLテンプレート |
 | `src/style.css` | PC・スマートフォン・印刷用のレイアウト |
-| `public/assets/portrait.jpg` | 旧プロフィールで使用していた本人写真 |
+| `public/assets/portrait.jpg` | 本人提供のプロフィール写真 |
 | `public/assets/dads/` | 同梱したデジタル庁デザインシステム |
 | `site.config.json` | 公開URL、更新日、移行元リビジョン |
 
@@ -61,4 +61,4 @@ DNS手順の参照元: [GitHub公式ドキュメント](https://docs.github.com/
 原稿は全件保存し、表示時に「株式会社はてな」の相対リンクを公式URLへ補正し、2件の空リンクに「関連資料」のラベルを補っています。
 
 DADS: `design-system-example-components-html` v20261021、`@digital-go-jp/design-tokens` 2.1.0（MIT）。同梱ライセンスは `public/assets/dads/LICENSE` にあります。
-写真は旧プロフィールの公開画像を継承しています。プロフィール文章・写真の権利はそれぞれの権利者に帰属します。
+写真は2026-11-16に本人から提供された元画像を使用しています。プロフィール文章・写真の権利はそれぞれの権利者に帰属します。

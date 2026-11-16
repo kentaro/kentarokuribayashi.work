@@ -66,7 +66,7 @@ const body = `<a class="skip dads-link" href="#main">本文へ移動</a>
       <p class="hero-role">GMOペパボ株式会社 取締役CTO<br>博士（情報科学）</p>
       <a class="dads-link hero-contact" href="mailto:${config.email}">お問い合わせ <span aria-hidden="true">↗</span></a>
     </div>
-    <figure class="hero-portrait"><img src="./assets/portrait.jpg" width="400" height="400" alt="栗林健太郎のポートレート" fetchpriority="high"><figcaption>Kentaro Kuribayashi / 栗林健太郎</figcaption></figure>
+    <figure class="hero-portrait"><img src="./assets/portrait.jpg" width="832" height="833" alt="栗林健太郎のポートレート" fetchpriority="high"></figure>
   </section>
   <div class="focus-strip wrap" aria-label="現在の活動">
     <div><p class="eyebrow">WORK</p><p>GMOペパボ株式会社<br><strong>取締役CTO・ペパボ研究所長</strong></p></div>
