@@ -66,3 +66,11 @@ test('canonical, social metadata and machine-readable profile use the configured
   assert.equal(profile.url,config.url);
   assert.match(profile.content,/IoTシステム開発の複雑さ/);
 });
+
+test('the professional site has no personal-site links or metadata',()=>{
+  assert.ok(!rendered.includes('kentarokuribayashi.com'));
+  assert.equal(document.querySelectorAll('.journal-link,.personal-links').length,0);
+  for (const name of ['profile.json','sitemap.xml','robots.txt']) {
+    assert.ok(!readFileSync(path.join(root,'dist',name),'utf8').includes('kentarokuribayashi.com'),name);
+  }
+});

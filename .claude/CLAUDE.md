@@ -10,5 +10,5 @@ Independent static profile for Kentaro Kuribayashi. Node builds Markdown into on
 - Run `npm test` and `npm run build`; verify desktop and narrow mobile screenshots and keyboard navigation after UI changes.
 - `npm run dev` serves `dist` on localhost:4173. Rebuild after source edits.
 - GitHub Actions publishes `dist` to Pages. `site.config.json` is the canonical URL source.
-- The planned `.work` domain is not registered as of migration. Do not point canonical/redirect URLs there until it is acquired and routing works.
+- The live domain is `https://kentarokuribayashi.work/` (Pages custom domain and HTTPS verified). Do not link this professional profile to the personal `.com` site, including header, footer, content navigation or metadata.
 - Do not sync from the old Obsidian source automatically. This repository owns the profile from this migration forward.

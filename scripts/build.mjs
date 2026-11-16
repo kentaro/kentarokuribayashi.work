@@ -60,7 +60,7 @@ ${domestic.split(/(?=^#### )/m).filter(s=>s.trim()).map(block=>{
 const nav = [['about','紹介'],['career','経歴'],['research','研究'],['writing','執筆'],['talks','登壇'],['press','取材'],['contact','連絡先']];
 const description = '栗林健太郎（あんちぽ）のプロフィール。GMOペパボ取締役CTO、博士（情報科学）。経歴、研究論文、特許、著書、登壇、取材、公共活動をまとめています。';
 const body = `<a class="skip dads-link" href="#main">本文へ移動</a>
-<header class="site-header wrap"><a class="wordmark" href="#top">Kentaro Kuribayashi<span>PROFILE & WORK</span></a><a class="journal-link dads-link" href="https://kentarokuribayashi.com/">日記と制作物 <span aria-hidden="true">↗</span></a></header>
+<header class="site-header wrap"><a class="wordmark" href="#top">Kentaro Kuribayashi<span>PROFILE & WORK</span></a></header>
 <main id="main">
   <section class="hero wrap" id="top" aria-labelledby="name">
     <div class="hero-identity">
@@ -85,7 +85,7 @@ const body = `<a class="skip dads-link" href="#main">本文へ移動</a>
     ${group('press','INTERVIEWS & MEDIA','取材・メディア掲載',`<div class="records">${html(sections.get('取材を受けた記事等'))}</div>`)}
     ${group('public','PUBLIC CONTRIBUTIONS','公共的な活動',`<div class="records">${html(sections.get('公共的な活動'))}</div>`)}
     ${group('qualifications','QUALIFICATIONS','資格・検定',`<div class="records qualifications">${html(sections.get('資格・検定'))}</div>`)}
-    ${group('interests','BEYOND WORK','関心と日々',`<div class="prose">${html(interests)}</div><dl class="interests-list"><div><dt>Social VR</dt><dd>VRChat / Resonite</dd></div><div><dt>Amateur radio</dt><dd>JK1RZR</dd></div><div><dt>License-free radio</dt><dd>とうきょうKK256（DCR・LCR）</dd></div><div><dt>Web3</dt><dd>antipop.eth</dd></div></dl><div class="personal-links">${[['journal','日記'],['works','制作物'],['photo','写真'],['music','音楽'],['podcast','Antipop FM']].map(([slug,label])=>`<a class="dads-link" href="https://kentarokuribayashi.com/${slug}">${label} ↗</a>`).join('')}</div>`)}
+    ${group('interests','BEYOND WORK','関心と日々',`<div class="prose">${html(interests)}</div><dl class="interests-list"><div><dt>Social VR</dt><dd>VRChat / Resonite</dd></div><div><dt>Amateur radio</dt><dd>JK1RZR</dd></div><div><dt>License-free radio</dt><dd>とうきょうKK256（DCR・LCR）</dd></div><div><dt>Web3</dt><dd>antipop.eth</dd></div></dl>`)}
   </div>
   <section class="contact" id="contact" aria-labelledby="contact-title"><div class="wrap contact-grid"><div><p class="eyebrow">GET IN TOUCH</p><h2 class="dads-heading" data-size="36" id="contact-title">お問い合わせ</h2><p>登壇・取材などのご連絡はこちらへ。</p></div><div><a class="email dads-link" href="mailto:${config.email}">${config.email} <span aria-hidden="true">↗</span></a><div class="social-links"><a class="dads-link" href="https://x.com/kentaro">X ↗</a><a class="dads-link" href="https://github.com/kentaro">GitHub ↗</a><a class="dads-link" href="https://www.linkedin.com/in/kentaro-kuribayashi">LinkedIn ↗</a><a class="dads-link" href="https://speakerdeck.com/kentaro">Speaker Deck ↗</a></div></div></div></section>
 </main>

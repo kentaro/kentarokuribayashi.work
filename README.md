@@ -3,9 +3,8 @@
 栗林健太郎のプロフィールを、日記・制作物サイトから切り出した独立サイトです。
 経歴、論文、特許、著書、登壇、取材、公共活動、資格を1ページに全件表示します。折り畳みはありません。
 
-- 仮公開URL: https://kentarokuribayashi.com/kentarokuribayashi.work/
-- 独自ドメイン（取得後に接続）: `kentarokuribayashi.work`
-- 旧サイト: https://kentarokuribayashi.com/
+- 公開URL: https://kentarokuribayashi.work/
+- 個人の日記・制作物サイトへの導線は設けません。
 
 ## 開発と更新
 
@@ -35,25 +34,10 @@ GitHub Actionsはこのリポジトリだけをcheckoutし、テスト後にGitH
 旧サイトやObsidianへのビルド時依存・submodule・認証情報はありません。
 AIや他のツール向けに `profile.json` と `profile.md` も配信します。
 
-## ドメイン取得後の接続
+## 公開設定
 
-1. `kentarokuribayashi.work` を取得し、GitHubアカウントのPages設定でドメインを検証します。
-2. このリポジトリの Settings → Pages で Custom domain に `kentarokuribayashi.work` を設定します。
-3. DNSに次のレコードを設定し、HTTPSの有効化を確認します。
-
-| 種別 | 名前 | 値 |
-|---|---|---|
-| A | @ | 185.199.108.153 |
-| A | @ | 185.199.109.153 |
-| A | @ | 185.199.110.153 |
-| A | @ | 185.199.111.153 |
-| CNAME | www | kentaro.github.io |
-
-4. `site.config.json` の `url` を `https://kentarokuribayashi.work/` に変更して再公開します。
-5. 旧サイトの `src/lib/profile.ts` の `PROFILE_URL` も同じURLへ変更します。
-
-GitHub Actions方式なので `CNAME` ファイルは不要です。ドメイン未取得の段階では、仮URLをcanonicalとして使います。
-DNS手順の参照元: [GitHub公式ドキュメント](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+GitHub PagesのCustom domainは `kentarokuribayashi.work`、HTTPSは有効です。
+`site.config.json` の `url` がcanonical、OGP、構造化データ、sitemapの共通設定です。
 
 ## 移行元と素材
 

@@ -10,7 +10,6 @@ a { overflow-wrap: anywhere; }
 .site-header { display: flex; justify-content: space-between; align-items: center; padding-block: 1.25rem; border-bottom: 1px solid var(--color-neutral-solid-gray-200); }
 .wordmark { color: var(--color-neutral-solid-gray-900); text-decoration: none; font-weight: var(--font-weight-700); font-size: var(--font-size-18); line-height: var(--line-height-140); }
 .wordmark span { display: inline-block; margin-left: 1rem; color: var(--color-neutral-solid-gray-600); font-size: var(--font-size-14); font-weight: var(--font-weight-400); letter-spacing: .08em; }
-.journal-link { font-size: var(--font-size-14); flex-shrink: 0; white-space: nowrap; }
 .eyebrow { font-family: var(--font-family-mono); font-size: var(--font-size-14); line-height: var(--line-height-150); color: var(--color-primitive-blue-900); letter-spacing: .06em; }
 .hero { display: grid; grid-template-columns: 15rem minmax(0,1fr); grid-template-areas: "portrait identity" "portrait summary"; gap: 1rem 3rem; align-items: start; padding-block: 2rem; }
 .hero-identity { grid-area: identity; }
@@ -63,7 +62,7 @@ a { overflow-wrap: anywhere; }
 .interests-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-block: 2rem; }
 .interests-list dt { font-family: var(--font-family-mono); font-size: var(--font-size-14); color: var(--color-neutral-solid-gray-600); }
 .interests-list dd { margin: .25rem 0 0; }
-.personal-links, .social-links { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; }
+.social-links { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; }
 .contact { background: var(--color-neutral-solid-gray-50); padding-block: 4rem; }
 .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: center; }
 .contact h2 { margin-block: .75rem 1rem; }
@@ -85,7 +84,6 @@ a { overflow-wrap: anywhere; }
   .site-header { padding-block: 1rem; gap: 1rem; }
   .wordmark { font-size: var(--font-size-16); }
   .wordmark span { display: block; font-size: var(--font-size-14); margin: .25rem 0 0; }
-  .journal-link { max-width: 7rem; text-align: right; }
   .hero { grid-template-columns: minmax(0,1fr) 9rem; grid-template-areas: "identity portrait" "summary summary"; gap: 1.25rem 1rem; padding-block: 1.5rem; }
   .hero h1.dads-heading { font-size: var(--font-size-28); white-space: nowrap; }
   .name-en { font-size: var(--font-size-16); }
