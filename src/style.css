@@ -10,7 +10,7 @@ a { overflow-wrap: anywhere; }
 .site-header { display: flex; justify-content: space-between; align-items: center; padding-block: 1.75rem; border-bottom: 1px solid var(--color-neutral-solid-gray-200); }
 .wordmark { color: var(--color-neutral-solid-gray-900); text-decoration: none; font-weight: var(--font-weight-700); font-size: var(--font-size-18); line-height: var(--line-height-140); }
 .wordmark span { display: block; margin-top: .5rem; color: var(--color-neutral-solid-gray-600); font-size: var(--font-size-14); font-weight: var(--font-weight-400); letter-spacing: .08em; }
-.journal-link { font-size: var(--font-size-14); }
+.journal-link { font-size: var(--font-size-14); flex-shrink: 0; white-space: nowrap; }
 .eyebrow { font-family: var(--font-family-mono); font-size: var(--font-size-14); line-height: var(--line-height-150); color: var(--color-primitive-blue-900); letter-spacing: .06em; }
 .hero { display: grid; grid-template-columns: 1fr 15rem; gap: 5rem; align-items: center; padding-block: 4rem; }
 .hero h1.dads-heading { margin-top: 1.5rem; line-height: var(--line-height-120); letter-spacing: -.035em; color: var(--color-neutral-solid-gray-900); }
